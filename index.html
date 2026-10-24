@@ -3,318 +3,460 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trần Thị Thương Thương · Portfolio & Giới thiệu</title>
-    <!-- Tailwind CSS -->
+    <title>Trần Thị Thương Thương | Content Marketing & Social Media Specialist</title>
+    
+    <!-- Google Fonts: Be Vietnam Pro & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        brand: {
-                            50: '#FFF0F3',
-                            100: '#FFE5EC',
-                            200: '#FFC4D6',
-                            300: '#FF758F',
-                            600: '#E05372',
-                            900: '#5C1D2A',
-                            cream: '#FAFAF5',
-                            card: '#FFF9FB'
-                        }
-                    },
                     fontFamily: {
-                        sans: ['Quicksand', 'Nunito', 'sans-serif'],
+                        sans: ['"Be Vietnam Pro"', '"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    colors: {
+                        bgCanvas: '#FBFBF9',
+                        textPrimary: '#1C1917',
+                        textMuted: '#6B7280',
+                        accentBrown: '#8C553A',
+                        accentSoft: '#F4EFEA',
+                        cardBg: '#FFFFFF',
+                        borderBorder: '#E7E5E4',
                     }
                 }
             }
         }
     </script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        body { font-family: 'Quicksand', sans-serif; background-color: #FAFAF5; color: #2D2D2D; }
+        /* CSS Accordion Custom Styling */
+        details summary::-webkit-details-marker {
+            display: none;
+        }
+        details[open] summary .chevron-icon {
+            transform: rotate(180deg);
+        }
+        .btn-gradient {
+            background: linear-gradient(135deg, #292524 0%, #1C1917 100%);
+        }
     </style>
 </head>
-<body class="bg-brand-cream text-neutral-800 antialiased selection:bg-brand-200 selection:text-brand-900">
+<body class="bg-bgCanvas text-textPrimary font-sans antialiased selection:bg-accentSoft selection:text-accentBrown min-h-screen flex flex-col justify-between">
 
-    <!-- HEADER -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-cream/80 border-b border-brand-100 transition-all">
-        <div class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#main" class="font-bold text-lg tracking-wider text-brand-900 flex items-center gap-2">
-                <span class="w-8 h-8 rounded-full bg-brand-200 text-brand-900 flex items-center justify-center font-extrabold text-sm shadow-sm">TT</span>
-                Thương Thương
+    <!-- 1. Header & Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-bgCanvas/80 backdrop-blur-md border-b border-borderBorder/60 transition-all duration-300">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo Thương hiệu -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-stone-900 text-white flex items-center justify-center font-bold text-base tracking-widest group-hover:bg-accentBrown transition-colors shadow-sm">
+                    TT
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-bold text-base tracking-tight leading-none text-stone-900 group-hover:text-accentBrown transition-colors">Thương Thương</span>
+                    <span class="text-[11px] text-stone-400 font-medium mt-1">Content & Social Specialist</span>
+                </div>
             </a>
-            
-            <nav aria-label="Điều hướng chính" class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-brand-300 transition-colors">Về tôi</a>
-                <a href="#projects" class="hover:text-brand-300 transition-colors">Dự án</a>
-                <a href="#skills" class="hover:text-brand-300 transition-colors">Kỹ năng</a>
-                <a href="#contact" class="hover:text-brand-300 transition-colors">Liên hệ</a>
+
+            <!-- Menu Điều Hướng Desktop -->
+            <nav class="hidden md:flex items-center gap-7 text-xs font-semibold text-stone-600 tracking-wide uppercase">
+                <a href="#about" class="hover:text-accentBrown transition-colors py-1" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
+                <a href="#experience" class="hover:text-accentBrown transition-colors py-1" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</a>
+                <a href="#skills" class="hover:text-accentBrown transition-colors py-1" data-vi="Kỹ năng" data-en="Skills">Kỹ năng</a>
+                <a href="#goals" class="hover:text-accentBrown transition-colors py-1" data-vi="Mục tiêu" data-en="Goals">Mục tiêu</a>
+                <a href="#faq" class="hover:text-accentBrown transition-colors py-1" data-vi="Hỏi nhanh" data-en="FAQ">Hỏi nhanh</a>
             </nav>
 
+            <!-- Nút chuyển ngôn ngữ VI/EN & Liên hệ -->
             <div class="flex items-center gap-3">
-                <button onclick="toggleLanguage()" aria-label="Switch language" class="text-xs font-bold px-3 py-1.5 rounded-full bg-brand-100 text-brand-900 hover:bg-brand-200 transition shadow-xs flex items-center gap-1">
-                    <span id="lang-indicator">VI</span> <span class="opacity-40">/</span> <span class="text-neutral-500">EN</span>
+                <button id="langToggleBtn" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-full border border-borderBorder bg-white hover:bg-stone-50 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-sm">
+                    <i data-lucide="globe" class="w-3.5 h-3.5 text-stone-500"></i>
+                    <span id="langText">EN</span>
                 </button>
+                <a href="#contact" class="hidden sm:inline-flex px-4 py-2 rounded-full bg-stone-900 text-white text-xs font-medium hover:bg-accentBrown transition-colors shadow-sm items-center gap-1.5">
+                    <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                    <span data-vi="Liên hệ" data-en="Contact">Liên hệ</span>
+                </a>
             </div>
         </div>
     </header>
 
-    <main id="main">
-        <!-- HERO SECTION -->
-        <section class="py-16 md:py-24 border-b border-brand-100">
-            <div class="max-w-4xl mx-auto px-6">
-                <p class="text-brand-600 font-semibold uppercase tracking-wider text-xs mb-3 flex items-center gap-2">
-                    <i class="fa-solid fa-sparkles"></i> Chào mừng bạn đến với Portfolio của tôi
-                </p>
-                <h1 class="text-4xl md:text-5xl font-extrabold text-neutral-900 mb-6 tracking-tight">
-                    Nối kết thương hiệu & người tiêu dùng bằng nội dung sáng tạo.
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- 2. Hero Section -->
+        <section id="about" class="pt-4 sm:pt-8">
+            <div class="max-w-3xl space-y-4">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accentSoft text-accentBrown text-xs font-semibold border border-accentBrown/20">
+                    <span class="w-2 h-2 rounded-full bg-accentBrown animate-pulse"></span>
+                    <span data-vi="Giới thiệu" data-en="Introduction">Giới thiệu</span>
+                </div>
+                <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-stone-900 leading-tight" data-vi="Về Tôi." data-en="About Me.">
+                    Về Tôi.
                 </h1>
-                <p class="text-lg text-neutral-600 max-w-2xl leading-relaxed">
-                    Tôi thích bắt đầu từ nhu cầu thực tế của khách hàng: họ thật sự cần gì, và vì sao họ nên chọn thương hiệu này?
+                <p class="text-lg sm:text-xl font-normal text-stone-600 leading-relaxed italic border-l-2 border-accentBrown pl-4 py-1" data-vi="“Kết nối câu chuyện thương hiệu từ góc nhìn trải nghiệm người dùng và tư duy nội dung đa kênh.”" data-en="“Connecting brand stories through user experience insights and cross-channel content strategy.”">
+                    “Kết nối câu chuyện thương hiệu từ góc nhìn trải nghiệm người dùng và tư duy nội dung đa kênh.”
                 </p>
             </div>
         </section>
 
-        <!-- INTRO & PROFILE -->
-        <section class="py-16 border-b border-brand-100">
-            <div class="max-w-4xl mx-auto px-6 grid md:grid-cols-12 gap-10 items-start">
-                <!-- Cột thông tin nhanh -->
-                <div class="md:col-span-5 bg-brand-card p-8 rounded-3xl border border-brand-200/60 shadow-sm relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-100/50 rounded-bl-full pointer-events-none"></div>
-                    
-                    <div class="w-20 h-20 rounded-2xl bg-gradient-to-tr from-brand-300 to-brand-100 text-brand-900 flex items-center justify-center font-black text-2xl mb-6 shadow-inner">
-                        TT
+        <!-- 3. Profile Info Section (Bố cục 2 Cột Tối Giản) -->
+        <section class="bg-cardBg rounded-3xl p-6 sm:p-10 border border-borderBorder shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                
+                <!-- Cột Trái (Card Tóm Tắt) -->
+                <div class="lg:col-span-5 space-y-6 lg:border-r border-borderBorder lg:pr-8">
+                    <div class="flex items-center gap-4">
+                        <div class="w-20 h-20 rounded-2xl bg-stone-100 border border-borderBorder flex items-center justify-center text-accentBrown font-bold text-2xl shadow-inner relative overflow-hidden">
+                            <i data-lucide="sparkles" class="w-9 h-9 text-accentBrown/80"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-stone-900">Trần Thị Thương Thương</h2>
+                            <p class="text-xs font-semibold text-accentBrown mt-1" data-vi="Content & Social Media Specialist" data-en="Content & Social Media Specialist">Content & Social Media Specialist</p>
+                            <div class="flex items-center gap-2 mt-2">
+                                <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+                                <span class="text-xs text-stone-500" data-vi="Đang mở cho cơ hội hợp tác mới" data-en="Open for new opportunities">Đang mở cho cơ hội hợp tác mới</span>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <h2 class="text-2xl font-bold text-neutral-900 mb-4">Trần Thị Thương Thương</h2>
-                    
-                    <div class="space-y-3 text-sm">
-                        <div class="flex flex-col"><span class="text-neutral-400 text-xs uppercase font-bold tracking-wider">Học tập</span><span class="font-semibold text-neutral-800">Sinh viên năm cuối ngành Marketing, TP.HCM</span></div>
-                        <div class="flex flex-col"><span class="text-neutral-400 text-xs uppercase font-bold tracking-wider">Đang tìm</span><span class="font-semibold text-neutral-800">Thực tập sinh Content & Social Media Marketing</span></div>
-                        <div class="flex flex-col"><span class="text-neutral-400 text-xs uppercase font-bold tracking-wider">Quan tâm</span><span class="font-semibold text-neutral-800">F&B · Beauty & Aesthetic · Retail · Social Media Strategy</span></div>
+
+                    <hr class="border-borderBorder/80" />
+
+                    <!-- Chuyên môn & Định hướng -->
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-2" data-vi="Đang tìm kiếm" data-en="Target Roles">Đang tìm kiếm</h3>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 bg-stone-100 text-stone-700 text-xs font-medium rounded-md border border-stone-200">Content Specialist</span>
+                                <span class="px-2.5 py-1 bg-stone-100 text-stone-700 text-xs font-medium rounded-md border border-stone-200">Social Executive</span>
+                                <span class="px-2.5 py-1 bg-stone-100 text-stone-700 text-xs font-medium rounded-md border border-stone-200">Brand Management</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-2" data-vi="Lĩnh vực thế mạnh" data-en="Key Domain Expertise">Lĩnh vực thế mạnh</h3>
+                            <div class="flex flex-wrap gap-1.5">
+                                <span class="px-2.5 py-1 bg-accentSoft text-accentBrown text-xs font-medium rounded-md border border-accentBrown/20">F&B Brand Management</span>
+                                <span class="px-2.5 py-1 bg-accentSoft text-accentBrown text-xs font-medium rounded-md border border-accentBrown/20">Tattoo & Aesthetic Art</span>
+                                <span class="px-2.5 py-1 bg-accentSoft text-accentBrown text-xs font-medium rounded-md border border-accentBrown/20">Community Workshop</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Cột lời ngỏ -->
-                <div class="md:col-span-7 space-y-6 text-neutral-700 leading-relaxed text-base">
-                    <p class="text-lg font-medium text-neutral-900 italic bg-brand-50 p-4 rounded-2xl border-l-4 border-brand-300">
-                        "Hiểu khách hàng trước, rồi mới kể chuyện thương hiệu một cách chân thực nhất."
+                <!-- Cột Phải (Triết Lý Làm Việc & Bản Thân) -->
+                <div class="lg:col-span-7 space-y-6 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-3" data-vi="Tự giới thiệu" data-en="About Me">Tự giới thiệu</h3>
+                        <p class="text-stone-700 text-sm sm:text-base leading-relaxed" data-vi="Tôi là một người làm Content Marketing với tư duy thực chiến, tập trung vào việc tạo ra nội dung vừa có tính thẩm mỹ vừa đem lại giá trị chuyển đổi rõ ràng. Bằng kinh nghiệm quản lý thương hiệu F&B riêng và trực tiếp vận hành kênh mạng xã hội cho các mảng nghệ thuật, tôi hiểu sâu sắc cách 'chạm' đúng insight khách hàng thông qua ngôn từ, visual và thông điệp đa nền tảng." data-en="I am a practical Content Marketer focused on producing content that combines visual appeal with tangible conversion value. With hands-on experience co-founding an F&B brand and managing social media for aesthetic arts, I deeply understand how to touch customer insights through storytelling, visuals, and cross-platform strategies.">
+                            Tôi là một người làm Content Marketing với tư duy thực chiến, tập trung vào việc tạo ra nội dung vừa có tính thẩm mỹ vừa đem lại giá trị chuyển đổi rõ ràng. Bằng kinh nghiệm quản lý thương hiệu F&B riêng và trực tiếp vận hành kênh mạng xã hội cho các mảng nghệ thuật, tôi hiểu sâu sắc cách 'chạm' đúng insight khách hàng thông qua ngôn từ, visual và thông điệp đa nền tảng.
+                        </p>
+                    </div>
+
+                    <!-- 3 Nguyên tắc làm việc -->
+                    <div class="space-y-3 pt-4 border-t border-borderBorder">
+                        <h3 class="text-[11px] font-bold text-stone-400 uppercase tracking-wider" data-vi="3 Nguyên tắc làm việc" data-en="3 Work Principles">3 Nguyên tắc làm việc</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200">
+                                <span class="text-xl font-extrabold text-accentBrown font-mono">01</span>
+                                <h4 class="font-bold text-xs text-stone-900 mt-1" data-vi="Thấu hiểu Insight" data-en="Deep Insight">Thấu hiểu Insight</h4>
+                                <p class="text-[11px] text-stone-500 mt-1 leading-snug" data-vi="Nghiên cứu kỹ tâm lý và hành vi nhóm khách hàng mục tiêu." data-en="In-depth research on target customer psychology.">Nghiên cứu kỹ tâm lý và hành vi nhóm khách hàng mục tiêu.</p>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200">
+                                <span class="text-xl font-extrabold text-accentBrown font-mono">02</span>
+                                <h4 class="font-bold text-xs text-stone-900 mt-1" data-vi="Sáng tạo Đa nền tảng" data-en="Cross-Platform">Sáng tạo Đa nền tảng</h4>
+                                <p class="text-[11px] text-stone-500 mt-1 leading-snug" data-vi="Linh hoạt thông điệp phù hợp cho TikTok, IG, FB & Threads." data-en="Tailoring messaging for TikTok, IG, FB & Threads.">Linh hoạt thông điệp phù hợp cho TikTok, IG, FB & Threads.</p>
+                            </div>
+                            <div class="p-3.5 rounded-xl bg-stone-50 border border-stone-200">
+                                <span class="text-xl font-extrabold text-accentBrown font-mono">03</span>
+                                <h4 class="font-bold text-xs text-stone-900 mt-1" data-vi="Đo lường & Tối ưu" data-en="Data Driven">Đo lường & Tối ưu</h4>
+                                <p class="text-[11px] text-stone-500 mt-1 leading-snug" data-vi="Đánh giá hiệu quả bằng chỉ số thực tế để cải thiện nội dung." data-en="Evaluating actual performance metrics for continuous improvement.">Đánh giá hiệu quả bằng chỉ số thực tế để cải thiện nội dung.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Kinh Nghiệm & Dự Án (Timeline) -->
+        <section id="experience" class="space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold tracking-tight text-stone-900" data-vi="Kinh Nghiệm & Dự Án Thực Chiến" data-en="Experience & Key Milestones">Kinh Nghiệm & Dự Án Thực Chiến</h2>
+                <p class="text-xs text-stone-500 mt-1" data-vi="Hành trình xây dựng thương hiệu và quản lý dự án truyền thông" data-en="My journey in brand building and marketing management">Hành trình xây dựng thương hiệu và quản lý dự án truyền thông</p>
+            </div>
+
+            <div class="relative border-l border-borderBorder ml-2 sm:ml-4 space-y-8 pl-6 sm:pl-8">
+                
+                <!-- Dự án 1: Đờ Rao Coffee -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-accentBrown group-hover:scale-125 group-hover:bg-accentBrown transition-all"></div>
+                    <span class="text-[11px] font-mono font-semibold text-accentBrown bg-accentSoft px-2.5 py-0.5 rounded border border-accentBrown/20">2023 - Present</span>
+                    <h3 class="text-base font-bold text-stone-900 mt-2" data-vi="Co-Founder & Brand Manager — Đờ Rao Coffee" data-en="Co-Founder & Brand Manager — Đờ Rao Coffee">Co-Founder & Brand Manager — Đờ Rao Coffee</h3>
+                    <p class="text-xs text-stone-500 mb-2" data-vi="Chuỗi không gian Cà phê Retro & Workshop Sáng tạo" data-en="Retro Coffee Shop & Creative Workshop Space">Chuỗi không gian Cà phê Retro & Workshop Sáng tạo</p>
+                    <ul class="text-xs sm:text-sm text-stone-600 list-disc list-inside space-y-1.5 leading-relaxed">
+                        <li data-vi="Xây dựng nhận diện thương hiệu từ con số 0 mang định hướng hoài niệm Retro/Vintage kết hợp văn hóa hiện đại." data-en="Built brand identity from scratch with a Retro/Vintage aesthetic integrated with modern vibe.">Xây dựng nhận diện thương hiệu từ con số 0 mang định hướng hoài niệm Retro/Vintage kết hợp văn hóa hiện đại.</li>
+                        <li data-vi="Sáng tạo nội dung đa kênh (TikTok, Facebook Fanpage, Instagram), tăng lượt tương tác tự nhiên lên 200% sau 6 tháng." data-en="Created multi-channel content (TikTok, Facebook, IG), boosting organic engagement by 200% in 6 months.">Sáng tạo nội dung đa kênh (TikTok, Facebook Fanpage, Instagram), tăng lượt tương tác tự nhiên lên 200% sau 6 tháng.</li>
+                        <li data-vi="Lên kế hoạch và thực thi chuỗi Workshop cuối tuần, thu hút lượng lớn khách trẻ tham gia định kỳ." data-en="Planned and executed weekend workshop series, consistently attracting young customers.">Lên kế hoạch và thực thi chuỗi Workshop cuối tuần, thu hút lượng lớn khách trẻ tham gia định kỳ.</li>
+                    </ul>
+                </div>
+
+                <!-- Dự án 2: Rowena Tattoo Studio -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-accentBrown group-hover:scale-125 group-hover:bg-accentBrown transition-all"></div>
+                    <span class="text-[11px] font-mono font-semibold text-accentBrown bg-accentSoft px-2.5 py-0.5 rounded border border-accentBrown/20">2023 - 2024</span>
+                    <h3 class="text-base font-bold text-stone-900 mt-2" data-vi="Content Marketer & Social Specialist — Rowena Tattoo Studio" data-en="Content Marketer & Social Specialist — Rowena Tattoo Studio">Content Marketer & Social Specialist — Rowena Tattoo Studio</h3>
+                    <p class="text-xs text-stone-500 mb-2" data-vi="Studio Xăm Nghệ Thuật & Aesthetic Art" data-en="Aesthetic Tattoo Studio & Visual Arts">Studio Xăm Nghệ Thuật & Aesthetic Art</p>
+                    <ul class="text-xs sm:text-sm text-stone-600 list-disc list-inside space-y-1.5 leading-relaxed">
+                        <li data-vi="Phát triển các chuỗi bài đăng mang tính giáo dục người dùng về nghệ thuật xăm hình, chăm sóc hình xăm và kể chuyện hình xăm cá nhân." data-en="Developed educational & storytelling content series around tattoo art and aftercare.">Phát triển các chuỗi bài đăng mang tính giáo dục người dùng về nghệ thuật xăm hình, chăm sóc hình xăm và kể chuyện hình xăm cá nhân.</li>
+                        <li data-vi="Triển khai chiến dịch 'Buffet Mini Tattoo', đem lại doanh thu vượt kỳ vọng và tiếp cận hàng ngàn lượt khách hàng trẻ." data-en="Executed the 'Buffet Mini Tattoo' campaign, exceeding sales targets and reaching thousands of young clients.">Triển khai chiến dịch 'Buffet Mini Tattoo', đem lại doanh thu vượt kỳ vọng và tiếp cận hàng ngàn lượt khách hàng trẻ.</li>
+                        <li data-vi="Tối ưu hình ảnh, kịch bản video ngắn TikTok/Reels giúp các mẫu thiết kế nghệ thuật có tỉ lệ chuyển đổi inbox cao." data-en="Optimized visuals & short video scripts on TikTok/Reels, driving high inbox conversion rates for custom tattoo designs.">Tối ưu hình ảnh, kịch bản video ngắn TikTok/Reels giúp các mẫu thiết kế nghệ thuật có tỉ lệ chuyển đổi inbox cao.</li>
+                    </ul>
+                </div>
+
+                <!-- Dự án 3: Sự Kiện Cộng Đồng -->
+                <div class="relative group">
+                    <div class="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-white border-2 border-accentBrown group-hover:scale-125 group-hover:bg-accentBrown transition-all"></div>
+                    <span class="text-[11px] font-mono font-semibold text-accentBrown bg-accentSoft px-2.5 py-0.5 rounded border border-accentBrown/20">Các hoạt động khác</span>
+                    <h3 class="text-base font-bold text-stone-900 mt-2" data-vi="Truyền Thông Sự Kiện Cộng Đồng & Workshop" data-en="Community Events & Workshop Communications">Truyền Thông Sự Kiện Cộng Đồng & Workshop</h3>
+                    <p class="text-xs text-stone-500 mb-2" data-vi="Các chương trình tình nguyện, Tiếp sức mùa thi & Workshop sáng tạo" data-en="Volunteer programs, Exam support & Creative Workshops">Các chương trình tình nguyện, Tiếp sức mùa thi & Workshop sáng tạo</p>
+                    <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" data-vi="Điều phối đội ngũ truyền thông, chịu trách nhiệm thiết kế bộ nhận diện sự kiện, viết bài đăng thu hút tài trợ và điều hướng truyền thông báo chí/mạng xã hội." data-en="Coordinated communications teams, designed event visual identity, wrote sponsorship pitches, and managed social press releases.">
+                        Điều phối đội ngũ truyền thông, chịu trách nhiệm thiết kế bộ nhận diện sự kiện, viết bài đăng thu hút tài trợ và điều hướng truyền thông báo chí/mạng xã hội.
                     </p>
-                    <p>
-                        Tôi là Thương Thương (Katerina Tran). Ở mỗi dự án, tôi đi từ việc lắng nghe insight khách hàng đến quan sát thực tế thị trường, rồi mới đề xuất định vị hoặc hướng triển khai nội dung.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. Kỹ Năng & Công Cụ (Skills & Tools) -->
+        <section id="skills" class="space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold tracking-tight text-stone-900" data-vi="Kỹ Năng & Công Cụ" data-en="Skills & Tools">Kỹ Năng & Công Cụ</h2>
+                <p class="text-xs text-stone-500 mt-1" data-vi="Trang bị chuyên môn và bộ công cụ phục vụ công việc hàng ngày" data-en="Technical proficiency and tools used daily">Trang bị chuyên môn và bộ công cụ phục vụ công việc hàng ngày</p>
+            </div>
+
+            <!-- Grid Kỹ năng -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="p-4 rounded-2xl bg-cardBg border border-borderBorder shadow-sm">
+                    <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-accentBrown mb-3">
+                        <i data-lucide="edit-3" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-stone-900" data-vi="Sáng tạo Nội dung (Copywriting)" data-en="Copywriting & Storytelling">Sáng tạo Nội dung (Copywriting)</h3>
+                    <p class="text-xs text-stone-500 mt-1 leading-relaxed" data-vi="Viết bài chuẩn SEO, kịch bản video ngắn, bài đăng mạng xã hội và câu chuyện thương hiệu truyền cảm hứng." data-en="SEO-friendly articles, short video scripts, social posts, and brand storytelling.">
+                        Viết bài chuẩn SEO, kịch bản video ngắn, bài đăng mạng xã hội và câu chuyện thương hiệu truyền cảm hứng.
                     </p>
-                    
-                    <ol class="space-y-4 pt-2">
-                        <li class="flex gap-3">
-                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-200 text-brand-900 flex items-center justify-center font-bold text-xs mt-0.5">1</span>
-                            <div><b>Lắng nghe khách hàng & đọc thị trường.</b> Đặt phản hồi thực tế cạnh các số liệu để tìm ra điểm chạm mà thương hiệu có thể khai thác.</div>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-200 text-brand-900 flex items-center justify-center font-bold text-xs mt-0.5">2</span>
-                            <div><b>Từ insight đến chiến dịch nội dung.</b> Biến insight thành thông điệp trực quan, triển khai nhịp nhàng trên các kênh TikTok, Instagram, Threads.</div>
-                        </li>
-                        <li class="flex gap-3">
-                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-brand-200 text-brand-900 flex items-center justify-center font-bold text-xs mt-0.5">3</span>
-                            <div><b>Tối ưu trải nghiệm thực tế.</b> Chăm chút từ hình ảnh trực quan, màu sắc nhận diện đến cách giao tiếp thân thiện với khách hàng.</div>
-                        </li>
-                    </ol>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-cardBg border border-borderBorder shadow-sm">
+                    <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-accentBrown mb-3">
+                        <i data-lucide="video" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-stone-900" data-vi="Thiết kế Graphic & Dựng Video" data-en="Graphic Design & Video Editing">Thiết kế Graphic & Dựng Video</h3>
+                    <p class="text-xs text-stone-500 mt-1 leading-relaxed" data-vi="Thiết kế ấn phẩm truyền thông bằng Canva, làm video ngắn bắt trend với CapCut (Reels, TikTok, Shorts)." data-en="Designing marketing materials with Canva, editing trending short videos with CapCut.">
+                        Thiết kế ấn phẩm truyền thông bằng Canva, làm video ngắn bắt trend với CapCut (Reels, TikTok, Shorts).
+                    </p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-cardBg border border-borderBorder shadow-sm">
+                    <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-accentBrown mb-3">
+                        <i data-lucide="share-2" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-stone-900" data-vi="Quản trị Mạng xã hội" data-en="Social Media Management">Quản trị Mạng xã hội</h3>
+                    <p class="text-xs text-stone-500 mt-1 leading-relaxed" data-vi="Vận hành Meta Business Suite, lên lịch Content Calendar, xây dựng tương tác cộng đồng bền vững." data-en="Operating Meta Business Suite, Content Calendar planning, building organic community engagement.">
+                        Vận hành Meta Business Suite, lên lịch Content Calendar, xây dựng tương tác cộng đồng bền vững.
+                    </p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-cardBg border border-borderBorder shadow-sm">
+                    <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-accentBrown mb-3">
+                        <i data-lucide="compass" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-stone-900" data-vi="Hoạch định Chiến dịch IMC" data-en="IMC Campaign Planning">Hoạch định Chiến dịch IMC</h3>
+                    <p class="text-xs text-stone-500 mt-1 leading-relaxed" data-vi="Lập kế hoạch truyền thông tích hợp ngắn và trung hạn, xác định key visual và thông điệp cốt lõi." data-en="Formulating short and medium term IMC plans, determining key visuals and core messaging.">
+                        Lập kế hoạch truyền thông tích hợp ngắn và trung hạn, xác định key visual và thông điệp cốt lõi.
+                    </p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-cardBg border border-borderBorder shadow-sm">
+                    <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-accentBrown mb-3">
+                        <i data-lucide="bot" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-stone-900" data-vi="Ứng dụng AI vào Workflows" data-en="AI-assisted Workflows">Ứng dụng AI vào Workflows</h3>
+                    <p class="text-xs text-stone-500 mt-1 leading-relaxed" data-vi="Khai thác ChatGPT và Claude để brainstorm ý tưởng, mở rộng góc nhìn nội dung và tối ưu thời gian." data-en="Utilizing ChatGPT & Claude for idea brainstorming, content expanding, and efficiency.">
+                        Khai thác ChatGPT và Claude để brainstorm ý tưởng, mở rộng góc nhìn nội dung và tối ưu thời gian.
+                    </p>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-cardBg border border-borderBorder shadow-sm">
+                    <div class="w-9 h-9 rounded-xl bg-stone-100 flex items-center justify-center text-accentBrown mb-3">
+                        <i data-lucide="trending-up" class="w-4 h-4"></i>
+                    </div>
+                    <h3 class="font-bold text-sm text-stone-900" data-vi="Quảng cáo Cơ bản (Ads)" data-en="Basic Ads Management">Quảng cáo Cơ bản (Ads)</h3>
+                    <p class="text-xs text-stone-500 mt-1 leading-relaxed" data-vi="Set up chiến dịch Zalo Ads, Messenger Ads cơ bản giúp tăng tương tác và chốt đơn nhanh chóng." data-en="Setting up basic Zalo & Messenger Ads campaigns to boost interaction and sales conversion.">
+                        Set up chiến dịch Zalo Ads, Messenger Ads cơ bản giúp tăng tương tác và chốt đơn nhanh chóng.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Badges Công cụ -->
+            <div class="pt-2">
+                <h3 class="text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-3" data-vi="Công cụ làm việc" data-en="Tools Stack">Công cụ làm việc</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-white border border-borderBorder rounded-lg text-xs font-semibold text-stone-700 flex items-center gap-2 shadow-sm"><i data-lucide="palette" class="w-3.5 h-3.5 text-blue-500"></i> Canva</span>
+                    <span class="px-3 py-1.5 bg-white border border-borderBorder rounded-lg text-xs font-semibold text-stone-700 flex items-center gap-2 shadow-sm"><i data-lucide="scissors" class="w-3.5 h-3.5 text-emerald-500"></i> CapCut</span>
+                    <span class="px-3 py-1.5 bg-white border border-borderBorder rounded-lg text-xs font-semibold text-stone-700 flex items-center gap-2 shadow-sm"><i data-lucide="facebook" class="w-3.5 h-3.5 text-blue-600"></i> Meta Business Suite</span>
+                    <span class="px-3 py-1.5 bg-white border border-borderBorder rounded-lg text-xs font-semibold text-stone-700 flex items-center gap-2 shadow-sm"><i data-lucide="cpu" class="w-3.5 h-3.5 text-amber-600"></i> ChatGPT / Claude</span>
+                    <span class="px-3 py-1.5 bg-white border border-borderBorder rounded-lg text-xs font-semibold text-stone-700 flex items-center gap-2 shadow-sm"><i data-lucide="message-square" class="w-3.5 h-3.5 text-sky-500"></i> Zalo / Messenger Ads</span>
+                    <span class="px-3 py-1.5 bg-white border border-borderBorder rounded-lg text-xs font-semibold text-stone-700 flex items-center gap-2 shadow-sm"><i data-lucide="file-text" class="w-3.5 h-3.5 text-emerald-600"></i> MS Office / Google Workspace</span>
                 </div>
             </div>
         </section>
 
-        <!-- KINH NGHIỆM & DỰ ÁN -->
-        <section id="projects" class="py-16 border-b border-brand-100">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="mb-12">
-                    <p class="text-brand-600 font-semibold uppercase tracking-wider text-xs mb-2">Thực tế công việc</p>
-                    <h2 class="text-3xl font-bold text-neutral-900">Kinh nghiệm & Dự án nổi bật</h2>
-                </div>
-
-                <div class="space-y-8">
-                    <!-- Dự án 1 -->
-                    <div class="bg-brand-card p-8 rounded-3xl border border-brand-200/60 shadow-sm hover:shadow-md transition">
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-100 text-brand-900">03/2026 – Hiện tại</span>
-                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">Đờ Rao Coffee</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mb-2">Sáng lập & Điều hành quán Cafe Vintage</h3>
-                        <p class="text-neutral-600 mb-4 text-sm leading-relaxed">
-                            Xây dựng và phát triển trọn vẹn thương hiệu từ ý tưởng concept, thiết kế menu đồ uống (matcha, cold brew, fruit tea), trang trí không gian retro cho đến hoạch định chiến lược social media. Quản lý vận hành mang lại 550 - 600 đơn hàng/tháng và doanh thu ổn định 15 - 18 triệu VND.
-                        </p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <span class="bg-neutral-100 text-neutral-700 px-2.5 py-1 rounded-md">FnB Management</span>
-                            <span class="bg-neutral-100 text-neutral-700 px-2.5 py-1 rounded-md">Menu Development</span>
-                            <span class="bg-neutral-100 text-neutral-700 px-2.5 py-1 rounded-md">Social Media Marketing</span>
-                        </div>
-                    </div>
-
-                    <!-- Dự án 2 -->
-                    <div class="bg-brand-card p-8 rounded-3xl border border-brand-200/60 shadow-sm hover:shadow-md transition">
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-100 text-brand-900">2025 – 2026</span>
-                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">Rowena Tattoo Studio</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mb-2">Content Marketer, Social Media Specialist & Cost Accountant</h3>
-                        <p class="text-neutral-600 mb-4 text-sm leading-relaxed">
-                            Dẫn dắt sản xuất nội dung, thiết kế đồ họa & dựng video ngắn trên TikTok, Instagram, Threads. Phối hợp với hệ thống các chi nhánh (Hà Nội, TP.HCM, Đà Nẵng, Buôn Ma Thuột, Kuala Lumpur). Góp phần nâng doanh thu marketing từ 180 triệu lên 270 triệu VND/tháng.
-                        </p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <span class="bg-neutral-100 text-neutral-700 px-2.5 py-1 rounded-md">Content Strategy</span>
-                            <span class="bg-neutral-100 text-neutral-700 px-2.5 py-1 rounded-md">Short-form Video</span>
-                            <span class="bg-neutral-100 text-neutral-700 px-2.5 py-1 rounded-md">Financial Tracking</span>
-                        </div>
-                    </div>
-
-                    <!-- Dự án 3 -->
-                    <div class="bg-brand-card p-8 rounded-3xl border border-brand-200/60 shadow-sm hover:shadow-md transition">
-                        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                            <span class="text-xs font-bold px-3 py-1 rounded-full bg-brand-100 text-brand-900">09/2026</span>
-                            <span class="text-xs font-semibold text-brand-600 bg-brand-50 px-3 py-1 rounded-full">Hoạt động cộng đồng</span>
-                        </div>
-                        <h3 class="text-xl font-bold text-neutral-900 mb-2">Trưởng ban Tiếp Sức Mùa Thi (Điểm thi THPT)</h3>
-                        <p class="text-neutral-600 mb-4 text-sm leading-relaxed">
-                            Điều phối lực lượng tình nguyện viên Đoàn thanh niên và ban giám hiệu nhà trường hỗ trợ sĩ tử tại điểm thi. Nhận giấy khen và bằng chứng nhận chính thức từ Đoàn trường.
-                        </p>
-                        <div class="flex flex-wrap gap-2 text-xs">
-                            <span class="bg-neutral-100 text-neutral-700 px-2.5 py-1 rounded-md">Project Leadership</span>
-                            <span class="bg-neutral-100 text-neutral-700 px-2.5 py-1 rounded-md">Event Coordination</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- KỸ NĂNG & CÔNG CỤ -->
-        <section id="skills" class="py-16 border-b border-brand-100">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="mb-12">
-                    <p class="text-brand-600 font-semibold uppercase tracking-wider text-xs mb-2">Năng lực cốt lõi</p>
-                    <h2 class="text-3xl font-bold text-neutral-900">Kỹ năng chuyên môn & Công cụ</h2>
-                </div>
-
-                <div class="grid md:grid-cols-3 gap-6 mb-12">
-                    <div class="bg-brand-card p-6 rounded-2xl border border-brand-200/50">
-                        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-900 flex items-center justify-center font-bold mb-4">
-                            <i class="fa-solid fa-pen-nib"></i>
-                        </div>
-                        <h3 class="font-bold text-neutral-900 mb-2">Content Marketing</h3>
-                        <p class="text-neutral-600 text-sm">Sáng tạo nội dung đa nền tảng, viết copywriting thu hút, kể chuyện thương hiệu (Brand Storytelling) chạm đến cảm xúc khách hàng.</p>
-                    </div>
-
-                    <div class="bg-brand-card p-6 rounded-2xl border border-brand-200/50">
-                        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-900 flex items-center justify-center font-bold mb-4">
-                            <i class="fa-solid fa-chart-line"></i>
-                        </div>
-                        <h3 class="font-bold text-neutral-900 mb-2">Social Media Specialist</h3>
-                        <p class="text-neutral-600 text-sm">Lên kế hoạch phát triển kênh TikTok, Instagram, Threads. Phân tích tương tác và tối ưu hóa hiệu quả hiển thị.</p>
-                    </div>
-
-                    <div class="bg-brand-card p-6 rounded-2xl border border-brand-200/50">
-                        <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-900 flex items-center justify-center font-bold mb-4">
-                            <i class="fa-solid fa-calculator"></i>
-                        </div>
-                        <h3 class="font-bold text-neutral-900 mb-2">Financial & Operations</h3>
-                        <p class="text-neutral-600 text-sm">Quản lý tài chính nội bộ, tính lương, theo dõi chi phí ngân sách chi nhánh và phân tích số liệu kinh doanh chuẩn xác.</p>
-                    </div>
-                </div>
-
-                <p class="text-xs uppercase font-bold text-neutral-400 tracking-wider mb-4">Công cụ sử dụng thành thạo</p>
-                <div class="flex flex-wrap gap-3">
-                    <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-200/60 font-medium text-sm flex items-center gap-2"><i class="fa-solid fa-palette text-brand-300"></i> Canva</span>
-                    <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-200/60 font-medium text-sm flex items-center gap-2"><i class="fa-solid fa-video text-brand-300"></i> CapCut</span>
-                    <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-200/60 font-medium text-sm flex items-center gap-2"><i class="fa-solid fa-robot text-brand-300"></i> ChatGPT & Claude</span>
-                    <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-200/60 font-medium text-sm flex items-center gap-2"><i class="fa-solid fa-file-excel text-brand-300"></i> Microsoft Excel & Word</span>
-                    <span class="px-4 py-2 rounded-xl bg-brand-card border border-brand-200/60 font-medium text-sm flex items-center gap-2"><i class="fa-solid fa-bullhorn text-brand-300"></i> Meta Business Suite</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- HỎI NHANH (FAQ) -->
-        <section class="py-16 border-b border-brand-100">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="mb-12">
-                    <p class="text-brand-600 font-semibold uppercase tracking-wider text-xs mb-2">Góc giải đáp</p>
-                    <h2 class="text-3xl font-bold text-neutral-900">Hỏi nhanh về tôi</h2>
+        <!-- 6. Mục Tiêu Nghề Nghiệp (Career Goals) -->
+        <section id="goals" class="bg-stone-900 text-white rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+            <div class="max-w-2xl space-y-6">
+                <div>
+                    <h2 class="text-2xl font-bold tracking-tight mb-1" data-vi="Mục Tiêu Nghề Nghiệp" data-en="Career Goals">Mục Tiêu Nghề Nghiệp</h2>
+                    <p class="text-stone-400 text-xs" data-vi="Giá trị tôi muốn đóng góp và định hướng phát triển bản thân" data-en="My value contribution and growth path">Giá trị tôi muốn đóng góp và định hướng phát triển bản thân</p>
                 </div>
 
                 <div class="space-y-4">
-                    <details class="bg-brand-card p-6 rounded-2xl border border-brand-200/60 group cursor-pointer">
-                        <summary class="font-bold text-neutral-900 list-none flex justify-between items-center">
-                            Vì sao bạn chọn Content & Social Media Marketing?
-                            <i class="fa-solid fa-chevron-down text-xs text-brand-600 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <p class="mt-3 text-neutral-600 text-sm leading-relaxed">
-                            Vì đây là nơi tôi được thỏa sức kết hợp giữa óc thẩm mỹ (thiết kế, hình ảnh vintage, màu sắc) và sự thấu hiểu tâm lý khách hàng để kể câu chuyện thương hiệu một cách lôi cuốn nhất.
-                        </p>
-                    </details>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-7 h-7 rounded-full bg-accentBrown/30 text-accentBrown flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</div>
+                        <div>
+                            <h3 class="font-bold text-sm text-stone-100" data-vi="Mục tiêu ngắn hạn (1 - 2 năm)" data-en="Short-term Goal (1-2 Years)">Mục tiêu ngắn hạn (1 - 2 năm)</h3>
+                            <p class="text-xs text-stone-400 mt-1 leading-relaxed" data-vi="Trở thành Content Leader hoặc Senior Social Specialist trong môi trường chuyên nghiệp. Đóng góp xây dựng bộ nhận diện nội dung nhất quán và phát triển cộng đồng khách hàng trung thành cho doanh nghiệp." data-en="Become a Content Leader or Senior Social Specialist in a professional environment. Building consistent content identity and loyal customer communities.">
+                                Trở thành Content Leader hoặc Senior Social Specialist trong môi trường chuyên nghiệp. Đóng góp xây dựng bộ nhận diện nội dung nhất quán và phát triển cộng đồng khách hàng trung thành cho doanh nghiệp.
+                            </p>
+                        </div>
+                    </div>
 
-                    <details class="bg-brand-card p-6 rounded-2xl border border-brand-200/60 group cursor-pointer">
-                        <summary class="font-bold text-neutral-900 list-none flex justify-between items-center">
-                            Kinh nghiệm điều hành quán cafe & studio giúp gì cho công việc Marketing?
-                            <i class="fa-solid fa-chevron-down text-xs text-brand-600 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <p class="mt-3 text-neutral-600 text-sm leading-relaxed">
-                            Việc tự tay lên concept Đờ Rao Coffee và làm việc tại Rowena Tattoo Studio giúp tôi có tư duy thực chiến toàn diện từ việc lập ngân sách, làm việc với khách hàng thực tế cho đến sản xuất nội dung sinh động mang lại doanh thu thực tế.
-                        </p>
-                    </details>
-
-                    <details class="bg-brand-card p-6 rounded-2xl border border-brand-200/60 group cursor-pointer">
-                        <summary class="font-bold text-neutral-900 list-none flex justify-between items-center">
-                            Bạn định hướng phát triển trong 1-2 năm tới như thế nào?
-                            <i class="fa-solid fa-chevron-down text-xs text-brand-600 transition-transform group-open:rotate-180"></i>
-                        </summary>
-                        <p class="mt-3 text-neutral-600 text-sm leading-relaxed">
-                            Tôi mong muốn được tham gia một môi trường chuyên nghiệp ở vị trí Thực tập sinh / Nhân viên Content & Social Media Marketing, nơi tôi được học hỏi quy trình chiến dịch IMC bài bản và đóng góp sức trẻ vào sự phát triển của thương hiệu.
-                        </p>
-                    </details>
+                    <div class="flex gap-4 items-start">
+                        <div class="w-7 h-7 rounded-full bg-accentBrown/30 text-accentBrown flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</div>
+                        <div>
+                            <h3 class="font-bold text-sm text-stone-100" data-vi="Mục tiêu dài hạn (3 - 5 năm)" data-en="Long-term Goal (3-5 Years)">Mục tiêu dài hạn (3 - 5 năm)</h3>
+                            <p class="text-xs text-stone-400 mt-1 leading-relaxed" data-vi="Phát triển thành Brand Strategy Manager chuyên sâu trong lĩnh vực F&B, Art & Lifestyle. Điều hành các chiến dịch marketing tổng thể đem lại tăng trưởng bền vững." data-en="Evolve into a Brand Strategy Manager specialized in F&B, Art & Lifestyle. Directing holistic marketing campaigns driving sustainable growth.">
+                                Phát triển thành Brand Strategy Manager chuyên sâu trong lĩnh vực F&B, Art & Lifestyle. Điều hành các chiến dịch marketing tổng thể đem lại tăng trưởng bền vững.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- LIÊN HỆ -->
-        <section id="contact" class="py-16">
-            <div class="max-w-4xl mx-auto px-6 text-center bg-brand-card p-12 rounded-3xl border border-brand-200/60 shadow-sm">
-                <span class="w-12 h-12 mx-auto rounded-full bg-brand-100 text-brand-900 flex items-center justify-center font-bold text-lg mb-4">
-                    <i class="fa-solid fa-paper-plane"></i>
-                </span>
-                <h2 class="text-3xl font-bold text-neutral-900 mb-3">Kết nối với tôi</h2>
-                <p class="text-neutral-600 max-w-md mx-auto mb-8 text-sm">
-                    Tôi luôn sẵn sàng đón nhận các cơ hội thực tập, hợp tác truyền thông hoặc trao đổi thú vị!
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="mailto:tranthuong741@gmail.com" class="px-6 py-3 rounded-full bg-brand-300 text-white font-bold text-sm hover:bg-brand-600 transition shadow-sm flex items-center gap-2">
-                        <i class="fa-solid fa-envelope"></i> tranthuong741@gmail.com
-                    </a>
-                    <a href="tel:0865224121" class="px-6 py-3 rounded-full bg-neutral-900 text-white font-bold text-sm hover:bg-neutral-800 transition shadow-sm flex items-center gap-2">
-                        <i class="fa-solid fa-phone"></i> 0865 224 121
-                    </a>
-                </div>
+        <!-- 7. Hỏi Nhanh (FAQ Section - Accordion) -->
+        <section id="faq" class="space-y-6">
+            <div>
+                <h2 class="text-2xl font-bold tracking-tight text-stone-900" data-vi="Hỏi Nhanh (FAQ)" data-en="Frequently Asked Questions">Hỏi Nhanh (FAQ)</h2>
+                <p class="text-xs text-stone-500 mt-1" data-vi="Hiểu thêm về tư duy và phong cách làm việc của Thương Thương" data-en="Learn more about my thinking and work style">Hiểu thêm về tư duy và phong cách làm việc của Thương Thương</p>
+            </div>
+
+            <div class="space-y-3 max-w-3xl">
+                
+                <details class="group bg-cardBg rounded-2xl border border-borderBorder p-4 cursor-pointer shadow-sm transition-all">
+                    <summary class="flex justify-between items-center font-semibold text-stone-900 list-none select-none text-sm">
+                        <span data-vi="Vì sao bạn theo đuổi Content Marketing & Social Media?" data-en="Why do you pursue Content Marketing & Social Media?">Vì sao bạn theo đuổi Content Marketing & Social Media?</span>
+                        <span class="chevron-icon transition-transform duration-300 text-stone-400 ml-4">
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-stone-600 mt-3 pt-3 border-t border-borderBorder leading-relaxed" data-vi="Tôi yêu thích việc biến những ý tưởng hoài niệm hay câu chuyện thương hiệu trừu tượng thành nội dung gần gũi, có thể tương tác trực tiếp với khách hàng và tạo ra cảm xúc thật." data-en="I love transforming abstract brand stories into relatable content that creates genuine human emotions and drives interaction.">
+                        Tôi yêu thích việc biến những ý tưởng hoài niệm hay câu chuyện thương hiệu trừu tượng thành nội dung gần gũi, có thể tương tác trực tiếp với khách hàng và tạo ra cảm xúc thật.
+                    </p>
+                </details>
+
+                <details class="group bg-cardBg rounded-2xl border border-borderBorder p-4 cursor-pointer shadow-sm transition-all">
+                    <summary class="flex justify-between items-center font-semibold text-stone-900 list-none select-none text-sm">
+                        <span data-vi="Điểm đặc biệt trong phong cách nội dung của bạn là gì?" data-en="What is unique about your content style?">Điểm đặc biệt trong phong cách nội dung của bạn là gì?</span>
+                        <span class="chevron-icon transition-transform duration-300 text-stone-400 ml-4">
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-stone-600 mt-3 pt-3 border-t border-borderBorder leading-relaxed" data-vi="Sự cân bằng giữa Thẩm mỹ (Visual/Giao diện) và Tính thực tế (Call-to-Action / Insight). Nội dung không chỉ 'đẹp' mà luôn hướng đến việc giúp người xem hiểu giá trị sản phẩm." data-en="A balance between Visual Aesthetics and Practicality. Content is not only good-looking but focused on demonstrating product value.">
+                        Sự cân bằng giữa Thẩm mỹ (Visual/Giao diện) và Tính thực tế (Call-to-Action / Insight). Nội dung không chỉ 'đẹp' mà luôn hướng đến việc giúp người xem hiểu giá trị sản phẩm.
+                    </p>
+                </details>
+
+                <details class="group bg-cardBg rounded-2xl border border-borderBorder p-4 cursor-pointer shadow-sm transition-all">
+                    <summary class="flex justify-between items-center font-semibold text-stone-900 list-none select-none text-sm">
+                        <span data-vi="Bạn đo lường hiệu quả bài viết / chiến dịch như thế nào?" data-en="How do you measure article or campaign performance?">Bạn đo lường hiệu quả bài viết / chiến dịch như thế nào?</span>
+                        <span class="chevron-icon transition-transform duration-300 text-stone-400 ml-4">
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-stone-600 mt-3 pt-3 border-t border-borderBorder leading-relaxed" data-vi="Tùy thuộc vào mục tiêu: Brand Awareness (Reach, Impressions, Share), Engagement (Comment, Save, Rate) hoặc Chuyển đổi (Inbound Inbox, Link click, Số lượt đăng ký Workshop)." data-en="Depending on campaign goals: Brand Awareness (Reach, Impressions), Engagement (Comments, Saves) or Conversions (Inquiries, Workshop registrations).">
+                        Tùy thuộc vào mục tiêu: Brand Awareness (Reach, Impressions, Share), Engagement (Comment, Save, Rate) hoặc Chuyển đổi (Inbound Inbox, Link click, Số lượt đăng ký Workshop).
+                    </p>
+                </details>
+
+                <details class="group bg-cardBg rounded-2xl border border-borderBorder p-4 cursor-pointer shadow-sm transition-all">
+                    <summary class="flex justify-between items-center font-semibold text-stone-900 list-none select-none text-sm">
+                        <span data-vi="Phương pháp bạn sử dụng AI trong sáng tạo nội dung?" data-en="How do you use AI in content creation?">Phương pháp bạn sử dụng AI trong sáng tạo nội dung?</span>
+                        <span class="chevron-icon transition-transform duration-300 text-stone-400 ml-4">
+                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                        </span>
+                    </summary>
+                    <p class="text-xs text-stone-600 mt-3 pt-3 border-t border-borderBorder leading-relaxed" data-vi="Dùng AI (ChatGPT, Claude) như một người cộng sự để nghiên cứu chủ đề, lên dàn ý kịch bản nhanh. Sau đó tôi sẽ 'humanize' lại văn phong, điều chỉnh giọng điệu đúng chuẩn Tone-of-Voice thương hiệu." data-en="I use AI as a co-creator for researching and outlining ideas quickly, then humanizing tone-of-voice to match brand guidelines.">
+                        Dùng AI (ChatGPT, Claude) như một người cộng sự để nghiên cứu chủ đề, lên dàn ý kịch bản nhanh. Sau đó tôi sẽ 'humanize' lại văn phong, điều chỉnh giọng điệu đúng chuẩn Tone-of-Voice thương hiệu.
+                    </p>
+                </details>
+
             </div>
         </section>
+
+        <!-- 8. Section Liên Hệ (Contact) -->
+        <section id="contact" class="border-t border-borderBorder pt-10 text-center space-y-3">
+            <h2 class="text-2xl font-bold text-stone-900" data-vi="Sẵn sàng kết nối & hợp tác?" data-en="Ready to connect & collaborate?">Sẵn sàng kết nối & hợp tác?</h2>
+            <p class="text-stone-500 text-xs max-w-sm mx-auto" data-vi="Hãy gửi lời nhắn cho tôi để thảo luận về dự án tiếp theo của bạn." data-en="Send me a message to discuss your next project.">Hãy gửi lời nhắn cho tôi để thảo luận về dự án tiếp theo của bạn.</p>
+            
+            <div class="pt-3 flex flex-wrap justify-center gap-3">
+                <a href="mailto:thuongthuong.content@gmail.com" class="px-5 py-2.5 rounded-full bg-stone-900 text-white text-xs font-semibold hover:bg-accentBrown transition-colors inline-flex items-center gap-2 shadow-sm">
+                    <i data-lucide="mail" class="w-4 h-4"></i> thuongthuong.content@gmail.com
+                </a>
+                <a href="tel:0900000000" class="px-5 py-2.5 rounded-full bg-white border border-borderBorder text-stone-700 text-xs font-semibold hover:bg-stone-50 transition-colors inline-flex items-center gap-2 shadow-sm">
+                    <i data-lucide="phone" class="w-4 h-4"></i> 09xx xxx xxx
+                </a>
+            </div>
+        </section>
+
     </main>
 
-    <!-- FOOTER -->
-    <footer class="border-t border-brand-100 py-8 bg-brand-cream text-xs text-neutral-500">
-        <div class="max-w-4xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p>© 2026 Trần Thị Thương Thương · Portfolio</p>
-            <div class="flex gap-6">
-                <a href="#about" class="hover:text-neutral-900 transition">Về tôi</a>
-                <a href="#projects" class="hover:text-neutral-900 transition">Dự án</a>
-                <a href="#contact" class="hover:text-neutral-900 transition">Liên hệ</a>
+    <!-- 9. Footer -->
+    <footer class="border-t border-borderBorder bg-white py-6 mt-16">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-500">
+            <p>© 2026 Trần Thị Thương Thương · Portfolio. All rights reserved.</p>
+            <div class="flex items-center gap-5 font-medium">
+                <a href="#about" class="hover:text-accentBrown transition-colors" data-vi="Giới thiệu" data-en="About">Giới thiệu</a>
+                <a href="#experience" class="hover:text-accentBrown transition-colors" data-vi="Kinh nghiệm" data-en="Experience">Kinh nghiệm</a>
+                <a href="#skills" class="hover:text-accentBrown transition-colors" data-vi="Kỹ năng" data-en="Skills">Kỹ năng</a>
+                <a href="#faq" class="hover:text-accentBrown transition-colors" data-vi="Hỏi đáp" data-en="FAQ">Hỏi đáp</a>
             </div>
         </div>
     </footer>
 
-    <!-- Script chuyển ngôn ngữ giả lập nhẹ -->
+    <!-- JS Logic: Đổi Ngôn Ngữ & Icons -->
     <script>
-        let isVi = true;
+        // Init Lucide Icons
+        lucide.createIcons();
+
+        // Dual Language State
+        let currentLang = 'VI';
+
         function toggleLanguage() {
-            isVi = !isVi;
-            const indicator = document.getElementById('lang-indicator');
-            indicator.textContent = isVi ? 'VI' : 'EN';
-            // Có thể mở rộng nội dung dịch ở đây nếu cần thiết
+            currentLang = currentLang === 'VI' ? 'EN' : 'VI';
+            document.getElementById('langText').innerText = currentLang === 'VI' ? 'EN' : 'VI';
+
+            // Swap language texts
+            const elements = document.querySelectorAll('[data-vi][data-en]');
+            elements.forEach(el => {
+                el.innerText = currentLang === 'EN' ? el.getAttribute('data-en') : el.getAttribute('data-vi');
+            });
         }
     </script>
 </body>
